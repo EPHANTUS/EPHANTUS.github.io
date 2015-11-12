@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Ephantus portfolio</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+<body>
+<div class="container-fluid">
+	<section class="row text-center jumbotron" id="slogan">
+		<h1>I build the future, its awesome!!! </h1>
+			<a href="#gallery" class="btn btn-warning">GO TO MY PROFILE</a>
+
+	</section>
+</div>
+
+
+<div class="container" >
+	
+	<div class="row text-center" id="myProjects">
+		<h1>MY PROJECTS</h1> </div>
+
+		<section class="row" id="gallery">
+			<div class="col-sm-3">
+				<img src="images/lion.jpg" class="img-responsive img-thumbnail" alt="Responsive image" style="min-height:350px">	
+				<button type="button" class="btn btn-primary btn-lg btn-block">CATS</button>	
+
+			</div>
+
+			<div class="col-sm-3">
+				<img src="images/monkey.jpg" class="img-responsive img-thumbnail" alt="Responsive image" style="min-height:350px">
+				<button type="button" class="btn btn-primary btn-lg btn-block">PRIMATES</button>
+			</div>
+			<div class="col-sm-3">
+				<img src="images/elephant.jpg" class="img-responsive img-thumbnail" alt="Responsive image" style="min-height:350px">
+				<button type="button" class="btn btn-primary btn-lg btn-block">MAMMALS</button>
+			</div>
+
+			<div class="col-sm-3">
+				<img src="images/eagle.jpg" class="img-responsive img-thumbnail" alt="Responsive image" style="min-height:350px">
+				<button type="button" class="btn btn-primary btn-lg btn-block">BIRDS</button>
+				<p>Find my Ruby on Rails work of several corporate websites.</p>
+			</div>
+
+
+		</section>
+		<section class="row text-center">
+			
+
+		</section>
+		<footer class="row">
+			<div class="page header text-center">
+					<h1>Talk To Us</h1>
+			</div>	
+			<div class="col-sm-6">
+				<form action="/" method="post">
+					<div class="form-group">
+						<label for InputEmail="inputEmail">Enter your email</label>
+						<input	type="email" name="email" id="inputEmail" placeholder="Enter your Email" class="form-control"/>
+					</div>
+
+					<div class="form-group">
+						<label>Leave a Comment</label>
+						<textarea rows="10" cols="8" name="comment" id="inputComment" class="form-control"></textarea>					
+
+					</div>
+					<button type="button" class="btn btn-warning">Submit Comment</button>
+					
+				</form>
+				
+			</div>
+			<div class="col-sm-6 text-center" id="socialMedia">		
+					<a href="https://facebook.com"><img src="images/facebook.png"></a>
+					<a href="https://twitter.com"><img src="images/twitter.png"></a>
+					<a href="http://whatsapp.com"><img src="images/WhatsApp.png"></a>
+					<a href="http://pinterest.com"><img src="images/pinterest.png"></a>
+					<a href="http://youtube.com"><img src="images/youtube.png"></a>
+					<a href="https://linkedin.com"><img src="images/linkedin.png"></a>
+
+		
+			</div>
+
+</footer>
+	
+</div>
+
+
+
+
+
+
+
+
+<script src="bootstrap-3.3.5-dist/js/jquery.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
