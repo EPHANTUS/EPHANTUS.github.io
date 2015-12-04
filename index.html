@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
 	<title>Ephantus portfolio</title>
 	<meta charset="utf-8"/>
@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/jquery-ui.min.css">
+	<script src= "bootstrap-3.3.5-dist/js/angular.min.js"></script>
 
 </head>
 <body>
@@ -202,28 +203,92 @@
 
 				</section>
 
+				<section class="row">
+					<div class="row col-sm-4" ng-controller="detailsController">
+						
+						<h6>First Name: {{fname}}</h6>
+						<h6>Last Name: {{lname}}</h6>
+						<h6>Course: {{course}}</h6>
+						<h6>School: {{school}}</h6>
+						<h6>Gradee: {{grade}}</h6>
+					</div>
+
+					<div class="row col-sm-6" ng-controller="carsController">
+						<table border="1px"class="table table-hover table-condensed">
+						<input type="text" ng-model="test" Placeholder="Search">
+						<caption>CARS</caption>
+						<th>Type</th>
+						<th>Model</th>
+						<th>Brand</th>
+						<th>Year</th>
+						<th>Cost</th>
+						<th>Photo</th>
+
+							<tr class="info" ng-repeat="x in cars | filter:test | orderBy: 'cost'">
+								<td>{{x.type | uppercase}}</td>
+								<td>{{x.model}}</td>
+								<td>{{x.brand}}</td>
+								<td>{{x.year}}</td>
+								<td>{{x.cost | currency}}</td>
+								<td><img style="max-width:50px" ng-src="{{x.image}}"/></td>
+
+								<td>
+								<p ng-show="{{x.year}} < 2005">This car is too old!</p>
+								<p ng-show="{{x.year}} > 2005">This car is new!</p>
+								</td>
+							</tr>
+						</table>
+						
+					</div>
+
+				</section>
+				<section class="row">
+					<div class="col-sm-12" ng-controller="blogsController" id="blogs">
+					<input type="text" ng-model="test" Placeholder="Search">
+						<ul ng-repeat="x in blogs | filter:test">
+							<li>{{x.id}}</li>
+							<li>{{x.name}}</li>
+							<li>{{x.email}}</li>
+							<li>{{x.body}}</li>
+
+						</ul>
+						
+					</div>
+				</section>
 
 		<footer class="row">
 			<div class="page header text-center" id="talkToUs">
 					<h1>Talk To Us</h1>
 			</div>	
-			<div class="col-sm-6">
-				<form action="/" method="post">
+			<div class="row col-sm-6">
+				<form name="contactForm" action="/" method="post" novalidate>
 					<div class="form-group">
 						<label for InputEmail="inputEmail">Enter your email</label>
-						<input	type="email" name="email" id="inputEmail" placeholder="Enter your Email" class="form-control"/>
+						<input	type="email" name="email" ng-model ="email" placeholder="Enter your Email" class="form-control" required/>
+						<span id="validate" ng-show="contactForm.email.$error.required">Please enter a valid email</span>
+						<span id="validate" ng-show="contactForm.email.$error.email">Please use someone@example.com</span>
 					</div>
 
 					<div class="form-group">
-						<label placeholder="Enter your comment here.">Leave a Comment</label>
-						<textarea rows="10" cols="8" name="comment" id="inputComment" class="form-control"></textarea>					
+						<label placeholder="Enter your comment here." >Leave a Comment</label>
+						<textarea rows="10" cols="8" name="comment" id="inputComment" class="form-control" ng-model ="comment" required></textarea>	
+						<span id="validate" ng-show="contactForm.comment.$error.required">Your comment is empty</span>		
+	<div>
+		    Size (integer 0 - 10):
+		    <input type="number" ng-model="size" name="size"
+		           min="0" max="10" integer required/>{{size}}<br/>
+		    <span ng-show="contactForm.size.$error.integer">The value is not a valid integer!</span>
+		    <span ng-show="contactForm.size.$error.min || contactForm.size.$error.max">
+		      The value must be in range 0 to 10!</span>
+  </div>		
 
 					</div>
-					<button type="button" class="btn btn-warning">Submit Comment</button>
+					<input type="Submit" ng-disabled="contactForm.$invalid" class="btn btn-warning" value="Submit Comment">
 					
 				</form>
 				
 			</div>
+			<div class="row col-sm-4"></div>
 			<div class="col-sm-6 text-center" id="socialMedia">		
 					<a href="https://facebook.com"><img src="images/facebook.png"></a>
 					<a href="https://twitter.com"><img src="images/twitter.png"></a>
@@ -249,6 +314,7 @@
 <script src="bootstrap-3.3.5-dist/js/jquery.min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/jqueryUi.js"></script>
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="js-user/controllers.js"></script>
 <script src="js-user/jqueryUiWork.js"></script>
 
 </body>

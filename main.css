@@ -34,4 +34,10 @@
 #nav-bar {
 	color: black;
 }
-
+#blogs{
+	list-style: none;
+	rotate: 10px;
+}
+#validate {
+	color: red;
+}
