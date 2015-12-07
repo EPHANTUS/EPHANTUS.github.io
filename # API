@@ -1,0 +1,7 @@
+# API
+This is an interface that stands between two systems:
+
+
+SYSTEM ONE---------------------> API ---------------------> SYSTEM TWO
+SYSTEM ONE<--------------------- API <--------------------- SYSTEM TWO
+
