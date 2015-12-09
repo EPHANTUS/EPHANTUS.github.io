@@ -43,6 +43,27 @@ $('#open-source-container').html(listTemplate);
 
 });
 
+//submit using AJAX
+signUpForm = $('#sign-up-form');
+
+signUpForm.on('submit', function(e) {
+	
+	formData = $('#sign-up-form').serialize();
+	action = '/login';
+
+	$.post(action, formData)
+	.done(function() {
+		alert("Sign up was successful");
+	})
+	.fail(function() {
+		alert("An error occured while submitting your form.");
+	});
+	
+	e.preventDefault();
+
+
+});
+
 
 
 
